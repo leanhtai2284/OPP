@@ -19,5 +19,4 @@ public class Point {
         return Math.sqrt(Math.pow(other.X-this.X,2) + Math.pow(other.Y-this.Y,2));
     }
 
-
 }
