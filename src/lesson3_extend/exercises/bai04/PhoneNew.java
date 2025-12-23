@@ -7,8 +7,8 @@ public class PhoneNew extends Phone{
     private String additionalDescription;
 
     // Constructor
-    public PhoneNew() {
-    }
+//    public PhoneNew() {
+//    }
 
     public PhoneNew(String id, String namePhone, double price, String warrantyPeriod, String manufacturer, String batteryStatus, String additionalDescription) {
         super(id, namePhone, price, warrantyPeriod, manufacturer);
@@ -36,6 +36,7 @@ public class PhoneNew extends Phone{
     }
 
     //nhap
+    @Override
     public void input(Scanner sc){
         super.input(sc);
 
@@ -45,6 +46,7 @@ public class PhoneNew extends Phone{
         this.additionalDescription = sc.nextLine();
     }
     //xuat
+    @Override
     public void output(){
         super.output();
 

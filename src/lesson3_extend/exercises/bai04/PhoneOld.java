@@ -7,8 +7,8 @@ public class PhoneOld extends Phone {
 
     //constructor
 
-    public PhoneOld() {
-    }
+//    public PhoneOld() {
+//    }
 
     public PhoneOld(String id, String namePhone, double price, String warrantyPeriod, String manufacturer, String quantity) {
         super(id, namePhone, price, warrantyPeriod, manufacturer);
@@ -25,12 +25,14 @@ public class PhoneOld extends Phone {
     }
 
     //nhap
+    @Override
     public void input(Scanner sc){
         super.input(sc);
         System.out.println("Nhap so luong: ");
         this.quantity = sc.nextLine();
     }
     //xuat
+    @Override
     public void output(){
         super.output();
         System.out.println("So luong: " + this.quantity);
