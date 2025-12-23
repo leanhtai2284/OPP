@@ -249,7 +249,7 @@ public class Main {
         System.out.print("Nhập giá max: ");
         int max = Integer.parseInt(sc.nextLine());
 
-        if (min > max) { // đảo nếu người dùng nhập ngược
+        if (min > max) {
             int t = min; min = max; max = t;
         }
 
