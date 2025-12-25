@@ -2,7 +2,7 @@ package lesson3_extend.exercises.bai04;
 
 import java.util.Scanner;
 
-public class PhoneOld extends Phone {
+public class PhoneOld extends Phone implements KhuyenMai {
     private String quantity;
 
     //constructor
@@ -36,5 +36,23 @@ public class PhoneOld extends Phone {
     public void output(){
         super.output();
         System.out.println("So luong: " + this.quantity);
+    }
+
+    // bai 7
+    @Override
+    public double sumPrice() {
+        try {
+            int qty = Integer.parseInt(this.quantity);
+            return this.getPrice() * qty;
+        } catch (NumberFormatException e) {
+            return this.getPrice();
+        }
+    }
+    //bai 8
+    @Override
+    public void khuyenMai(int percent) {
+        double newPrice = this.getPrice() * (1 - (double)percent / 100);
+        this.setPrice(newPrice);
+        System.out.println("Da giam gia " + percent + "% cho dien thoai cu: " + this.getNamePhone());
     }
 }

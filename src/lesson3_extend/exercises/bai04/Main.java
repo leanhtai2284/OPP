@@ -48,8 +48,10 @@ public class Main {
                         search();
                         break;
                     case 7:
+                        calculateTotalRevenue();
                         break;
                     case 8:
+                        applyDiscountForOldPhones();
                         break;
                     case 9:
                         return;
@@ -279,6 +281,42 @@ public class Main {
         }
 
         if (!found) System.out.println("Không tìm thấy tên gần đúng: " + key);
+    }
+    private static void calculateTotalRevenue() {
+        double total = 0;
+        System.out.println("=== CHI TIẾT GIÁ TRỊ TỒN KHO ===");
+        for (Phone p : phones) {
+            double currentPrice = p.sumPrice();
+            total += currentPrice;
+            System.out.printf("- %s: %.2f (Tổng tiền)\n", p.getNamePhone(), currentPrice);
+        }
+        System.out.println("--------------------------------");
+        System.out.println(">>> TỔNG DOANH THU DỰ KIẾN: " + total);
+    }
+
+    private static void applyDiscountForOldPhones() {
+        System.out.print("Nhập phần trăm muốn giảm giá (VD: 20): ");
+        int percent;
+        try {
+            percent = Integer.parseInt(sc.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("Lỗi nhập liệu!");
+            return;
+        }
+
+        boolean found = false;
+        for (Phone p : phones) {
+            if (p instanceof KhuyenMai) {
+                ((KhuyenMai) p).khuyenMai(percent);
+                found = true;
+            }
+        }
+
+        if (found) {
+            System.out.println("Đã cập nhật giá xong. Vui lòng xem lại danh sách (Menu 1).");
+        } else {
+            System.out.println("Không có điện thoại cũ nào để giảm giá.");
+        }
     }
 
 

@@ -2,7 +2,7 @@ package lesson3_extend.exercises.bai04;
 
 import java.util.Scanner;
 
-public class Phone {
+public abstract class Phone {
     private String id;
     private String namePhone;
     private double price;
@@ -81,5 +81,6 @@ public class Phone {
         System.out.println("Nha san xuat: " + this.manufacturer);
     }
 
+    public abstract double sumPrice();
 
 }

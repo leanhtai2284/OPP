@@ -53,4 +53,9 @@ public class PhoneNew extends Phone{
         System.out.println("Tinh trang pin: " + this.batteryStatus);
         System.out.println("Mo ta them: " + this.additionalDescription);
     }
+    // bai 7
+    @Override
+    public double sumPrice() {
+        return this.getPrice();
+    }
 }
